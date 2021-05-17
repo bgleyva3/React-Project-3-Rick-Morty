@@ -1,22 +1,68 @@
 .App {
   text-align: center;
+  color: white
 }
 
 .search-box{
-  background-color: bisque;
   width: 10rem;
   padding: 1rem 2rem 1rem 2rem;
   margin: auto;
+  border-radius: 6px;
+  min-width: 33.33%;
+  padding: 1rem 0 1rem 0;
 }
 
 .location-info{
-  background-color: rosybrown;
+  background-color: #040B1A;
   width: 10rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
   margin: auto;
+  border-radius: 6px;
+  min-width: 33.33%; 
+  padding: 0;
 }
 
 ul {
   list-style-type: none;
   padding:0;
+}
+
+.top-bar{
+  display:flex;
+  margin: 1rem 0 1rem 0;
+}
+
+.residents-container{
+  background-color: #040B1A;
+}
+
+.title{
+  color: #040B1A;
+  min-width: 33.33%;
+  padding: 0;
+}
+
+.search-box form{
+  width: 16rem;
+  background-color: #040B1A;
+}
+
+.resident-card{
+  background-color: #2B2D39;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.button-page{
+  background-color: red;
+  padding: 1rem;
+  background-color: #2B2D39;
+}
+
+.button-page button{
+  margin: 0 .1rem 0 .1rem;
+}
+
+.button-page button:hover{
+  cursor: pointer
 }

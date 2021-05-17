@@ -56,10 +56,15 @@ function App() {
 
     return (
         <div>
-            <SearchBox handleSearch={setQueryTerm} />
-            <LocationInfo location={location} />
-            <Pagination numberOfResidents={residents.length} rangeOfResidents={setRangeOfResidents} />
-            {list}
+            <div className="top-bar">
+                <SearchBox handleSearch={setQueryTerm} />
+                <h1 className="title">Rick and Morty</h1>
+                <LocationInfo location={location} />
+            </div>
+            <div className="residents-container">
+                <Pagination numberOfResidents={residents.length} rangeOfResidents={setRangeOfResidents} />
+                {list}
+            </div>
         </div>
     );
 }
