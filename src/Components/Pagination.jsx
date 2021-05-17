@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const Pagination = ({ numberOfResidents }) => {
+const Pagination = ({ numberOfResidents, rangeOfResidents }) => {
 
     const [pages, setPages] = useState([])
 
@@ -12,7 +12,6 @@ const Pagination = ({ numberOfResidents }) => {
                 arrayOfPages.push(i)
             }
             setPages(arrayOfPages)
-            console.log(arrayOfPages)
         }
     }, [numberOfResidents])
 
@@ -21,7 +20,7 @@ const Pagination = ({ numberOfResidents }) => {
         const indexMin = (number - 1) * 10
         const indexMax = (number * 10) - 1
         const indexArray = [indexMin, indexMax]
-
+        rangeOfResidents(indexArray)
     }
 
     return (

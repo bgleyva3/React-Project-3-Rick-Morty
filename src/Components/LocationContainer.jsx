@@ -12,6 +12,7 @@ function App() {
     const [location, setLocation] = useState("")
     const [firstData, setFirstData] = useState(true)
     const [rangeOfResidents, setRangeOfResidents] = useState([0, 9])
+    const [sliceOfResidents, setSliceOfResidents] = useState([])
 
     //First random location
     useEffect(() => {
@@ -21,10 +22,7 @@ function App() {
                 .then(response => response.json())
                 .then(data => {
                     setResidents(data.residents);
-                    console.log(data.residents);
-                    console.log(data.residents.length)
                     setLocation(data)
-                    console.log(data);
                 })
         }
     }, [residents])
@@ -38,16 +36,20 @@ function App() {
                 .then(response => response.json())
                 .then(data => {
                     setResidents(data.results[0].residents);
-                    console.log(data.results[0].residents);
                     setLocation(data.results[0])
-                    console.log(data.results[0])
                 })
         }
     }, [queryTerm])
 
 
+    useEffect(() => {
+        if (residents) {
+            setSliceOfResidents(residents.slice(rangeOfResidents[0], rangeOfResidents[1] + 1))
+        }
+    }, [rangeOfResidents, residents])
+
     //Maps all the Residents
-    const list = residents.map(value => {
+    const list = sliceOfResidents.map(value => {
         return <ResidentContainer url={value} key={value.id} />
     })
 
@@ -56,7 +58,7 @@ function App() {
         <div>
             <SearchBox handleSearch={setQueryTerm} />
             <LocationInfo location={location} />
-            <Pagination numberOfResidents={residents.length} />
+            <Pagination numberOfResidents={residents.length} rangeOfResidents={setRangeOfResidents} />
             {list}
         </div>
     );

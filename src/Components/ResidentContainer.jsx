@@ -15,7 +15,6 @@ const ResidentContainer = ({ url, key }) => {
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
                     setImage(data.image)
                     setName(data.name)
                     setStatus(data.status)
