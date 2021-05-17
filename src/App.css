@@ -10,7 +10,7 @@
 }
 
 .search-box{
-
+  
 }
 
 .search-box form{
@@ -30,7 +30,7 @@
 }
 
 .location-info{
-  background-color: #040B1A;
+  background-color: #06152e;
   width: 16rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
   border-radius: 6px; 
@@ -52,7 +52,7 @@
   left: 2rem;
   padding: 0.5rem 0.6rem 0.5rem 0.6rem;
   color: white;
-  background-color: #040B1A;
+  background-color: #06152e;
   border-radius: 6px;
   
 }
@@ -79,7 +79,7 @@ ul {
 
 .search-box form{
   width: 16rem;
-  background-color: #040B1A;
+  background-color: #06152e;
 }
 
 .resident-card{
