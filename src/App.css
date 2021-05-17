@@ -3,23 +3,58 @@
   color: white
 }
 
+.top-bar{
+  display:flex;
+  position:relative;
+  height:0;
+}
+
 .search-box{
-  width: 10rem;
-  padding: 1rem 2rem 1rem 2rem;
-  margin: auto;
-  border-radius: 6px;
-  min-width: 33.33%;
-  padding: 1rem 0 1rem 0;
+
+}
+
+.search-box form{
+  box-sizing: border-box;
+  height: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.search-box button:first-child {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
 
 .location-info{
   background-color: #040B1A;
-  width: 10rem;
+  width: 16rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
-  margin: auto;
-  border-radius: 6px;
-  min-width: 33.33%; 
+  border-radius: 6px; 
   padding: 0;
+  z-index: 10;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.open-search-button{
+  height: 0
+}
+
+.open-search-button button{
+  z-index: 30;
+  position: relative;
+  top: 2rem;
+  left: 2rem;
+  padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+  color: white;
+  background-color: #040B1A;
+  border-radius: 6px;
+  
 }
 
 ul {
@@ -27,10 +62,6 @@ ul {
   padding:0;
 }
 
-.top-bar{
-  display:flex;
-  margin: 1rem 0 1rem 0;
-}
 
 .residents-container{
   background-color: #040B1A;
@@ -38,8 +69,12 @@ ul {
 
 .title{
   color: #040B1A;
-  min-width: 33.33%;
   padding: 0;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13rem;
 }
 
 .search-box form{
@@ -63,6 +98,6 @@ ul {
   margin: 0 .1rem 0 .1rem;
 }
 
-.button-page button:hover{
-  cursor: pointer
+button:hover{
+  cursor: pointer;
 }

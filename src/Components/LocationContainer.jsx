@@ -58,9 +58,9 @@ function App() {
         <div>
             <div className="top-bar">
                 <SearchBox handleSearch={setQueryTerm} />
-                <h1 className="title">Rick and Morty</h1>
                 <LocationInfo location={location} />
             </div>
+            <h1 className="title">Rick and Morty</h1>
             <div className="residents-container">
                 <Pagination numberOfResidents={residents.length} rangeOfResidents={setRangeOfResidents} />
                 {list}
