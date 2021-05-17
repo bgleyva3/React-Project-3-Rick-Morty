@@ -13,6 +13,7 @@
   
 }
 
+
 .search-box form{
   box-sizing: border-box;
   height: 13rem;
@@ -21,6 +22,9 @@
   align-items: center;
   flex-direction: column;
   position: relative;
+  width: 16rem;
+  background-color: #06152e;
+  z-index: 8;
 }
 
 .search-box button:first-child {
@@ -33,6 +37,37 @@
 .search-box form button {
   margin-top: 1rem;
 }
+
+.out-noAnim{
+  position: relative;
+  left: -20rem;
+}
+
+.out{
+  position: relative;
+  animation-name: animOut;
+  animation-duration: 1s; 
+  left: -20rem;
+}
+
+@keyframes animOut {
+  from {left: 0rem;}
+  to {left: -20rem;}
+}
+
+.in{
+  position: relative;
+  animation-name: animIn;
+  animation-duration: 1s; 
+  left: 0rem;
+}
+
+@keyframes animIn {
+  from {left: -20rem;}
+  to {left: 0rem;}
+}
+
+
 
 .location-info{
   background-color: #06152e;
@@ -51,11 +86,11 @@
 }
 
 .open-search-button button{
-  z-index: 30;
-  position: relative;
+  z-index: 5;
+  position: absolute;
   top: 2rem;
   left: 2rem;
-  padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+  padding: 0.6rem;
   color: white;
   background-color: #06152e;
   border-radius: 6px;
@@ -80,11 +115,6 @@ ul {
   justify-content: center;
   align-items: center;
   height: 13rem;
-}
-
-.search-box form{
-  width: 16rem;
-  background-color: #06152e;
 }
 
 .resident-card{
