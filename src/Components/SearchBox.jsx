@@ -11,11 +11,12 @@ const SearchBox = ({ handleSearch }) => {
                 showForm ?
                     <div className="search-box">
                         <button onClick={() => setShowForm(false)}>X</button>
-                        <p>Search Location</p>
+
                         <form onSubmit={(e) => {
                             e.preventDefault()
                             handleSearch(queryInput)
                         }}>
+                            <p>Search Location</p>
                             <input placeholder="Enter location" onChange={(elem) => setQueryInput(elem.target.value)}></input>
                             <button type="submit" value="Search">Search</button>
                         </form>

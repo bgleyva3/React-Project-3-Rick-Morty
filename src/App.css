@@ -24,9 +24,14 @@
 }
 
 .search-box button:first-child {
+  z-index: 40;
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+
+.search-box form button {
+  margin-top: 1rem;
 }
 
 .location-info{
