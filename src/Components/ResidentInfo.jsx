@@ -1,11 +1,6 @@
 import React from "react"
-import { useEffect } from "react"
 
 const ResidentInfo = (props) => {
-
-    useEffect(() => {
-        console.log(props.id)
-    }, [props])
 
     return (
         <div className="resident-card" key={props.key}>

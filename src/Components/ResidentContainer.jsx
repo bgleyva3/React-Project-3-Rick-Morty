@@ -23,8 +23,6 @@ const ResidentContainer = ({ url, key }) => {
                     setLocation(data.location.name)
                     setEpisodes(data.episode.length)
                     setId(data.id)
-                    console.log(data)
-                    console.log(data.id)
                 })
         }
     }, [url])
