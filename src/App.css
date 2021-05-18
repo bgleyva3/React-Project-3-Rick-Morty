@@ -1,9 +1,16 @@
 .App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   color: white
 }
 
-.top-bar{
+.search-box-container{
+  display:flex;
+  position:relative;
+  height:0;
+}
+
+.location-info-container{
   display:flex;
   position:relative;
   height:0;
@@ -22,20 +29,21 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  width: 16rem;
+  width: 18rem;
   background-color: #06152e;
   z-index: 8;
+  top: -13rem;
 }
 
 .search-box button:first-child {
   z-index: 40;
   position: absolute;
-  top: 1rem;
+  top: -12rem;
   left: 1rem;
 }
 
-.search-box form button {
-  margin-top: 1rem;
+.search-box form input {
+  margin: 1rem 0 1rem 0;
 }
 
 .out-noAnim{
@@ -46,7 +54,7 @@
 .out{
   position: relative;
   animation-name: animOut;
-  animation-duration: 1s; 
+  animation-duration: 0.5s; 
   left: -20rem;
 }
 
@@ -58,7 +66,7 @@
 .in{
   position: relative;
   animation-name: animIn;
-  animation-duration: 1s; 
+  animation-duration: 0.5s; 
   left: 0rem;
 }
 
@@ -78,7 +86,7 @@
   z-index: 10;
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: -12rem;
 }
 
 .open-search-button{
@@ -88,7 +96,7 @@
 .open-search-button button{
   z-index: 5;
   position: absolute;
-  top: 2rem;
+  top: -11rem;
   left: 2rem;
   padding: 0.6rem;
   color: white;
@@ -108,6 +116,8 @@ ul {
 }
 
 .title{
+  font-size: 3.5rem;
+  font-weight: 800;
   color: #040B1A;
   padding: 0;
   margin:auto;
@@ -123,16 +133,118 @@ ul {
   margin: 1rem;
 }
 
+.resident-card :nth-child(2){
+  font-weight: 700;
+}
+
 .button-page{
-  background-color: red;
   padding: 1rem;
-  background-color: #2B2D39;
+  background-color: none;
 }
 
 .button-page button{
   margin: 0 .1rem 0 .1rem;
+  font-size: 1.1rem;
+  padding: .1rem .4rem .1rem .4rem;
 }
 
 button:hover{
   cursor: pointer;
+}
+
+#location-input{
+  color: white;
+  background-color: #06152e;
+  border-radius: 6px;
+  border: solid 1px white;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+#search-button{
+  color: white;
+  border: none;
+  border-radius: 4px;
+  background-color: #3182ce;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.green{
+  color: rgb(48, 187, 48);
+}
+
+.red{
+  color:rgb(197, 42, 42);
+}
+
+.yellow{
+  color:rgb(197, 187, 41);
+}
+
+@media (max-width: 900px){
+
+  .search-box-container{
+    display: block;
+    position:relative;
+    height:0;
+  }
+
+  .search-box{
+    width: 100%;
+    height: 0;
+  }
+  .search-box form{
+    width: 100%;
+  }
+
+  .location-info-container{
+    display:inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+  .location-info{
+    background-color: #06152e;
+    width: 100%;
+    border-radius: 0; 
+    padding: 1rem 0 1rem 0;
+    z-index: 0;
+    position: static;
+    right: 0;
+    top: 0;
+    margin: 0;
+  }
+
+  .location-info p{
+    margin: 0;
+    padding: .5rem 0 0.5rem 0;
+  }
+
+  .location-info :first-child{
+    font-weight: 700;
+  }
+
+  .out-noAnim{
+    left: -70rem;
+  }
+
+  .out{
+    animation-duration: 0.7s; 
+    left: -70rem;
+  }
+  
+  @keyframes animOut {
+    from {left: 0rem;}
+    to {left: -70rem;}
+  }
+  
+  .in{
+    animation-duration: 0.7s; 
+    left: 0rem;
+  }
+  
+  @keyframes animIn {
+    from {left: -70rem;}
+    to {left: 0rem;}
+  }
+  
 }

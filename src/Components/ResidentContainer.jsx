@@ -9,6 +9,7 @@ const ResidentContainer = ({ url, key }) => {
     const [species, setSpecies] = useState("")
     const [location, setLocation] = useState("")
     const [episodes, setEpisodes] = useState("")
+    const [id, setId] = useState("")
 
     useEffect(() => {
         if (url) {
@@ -21,12 +22,15 @@ const ResidentContainer = ({ url, key }) => {
                     setSpecies(data.species)
                     setLocation(data.location.name)
                     setEpisodes(data.episode.length)
+                    setId(data.id)
+                    console.log(data)
+                    console.log(data.id)
                 })
         }
     }, [url])
 
     return (
-        <ResidentInfo key={key} image={image} name={name} status={status} species={species} location={location} episodes={episodes} />
+        <ResidentInfo id={id} image={image} name={name} status={status} species={species} location={location} episodes={episodes} />
     )
 }
 

@@ -7,7 +7,6 @@ import Pagination from "./Pagination"
 function App() {
 
     const [queryTerm, setQueryTerm] = useState("");
-    const [numOfResidents, setNumOfResidents] = useState(10);
     const [residents, setResidents] = useState([])
     const [location, setLocation] = useState("")
     const [firstData, setFirstData] = useState(true)
@@ -24,6 +23,7 @@ function App() {
                     setResidents(data.residents);
                     setLocation(data)
                 })
+                .catch(err => console.log(err))
         }
     }, [residents])
 
@@ -38,6 +38,7 @@ function App() {
                     setResidents(data.results[0].residents);
                     setLocation(data.results[0])
                 })
+                .catch(err => console.log(err))
         }
     }, [queryTerm])
 
@@ -56,11 +57,13 @@ function App() {
 
     return (
         <div>
-            <div className="top-bar">
+            <h1 className="title">Rick and Morty</h1>
+            <div className="search-box-container">
                 <SearchBox handleSearch={setQueryTerm} />
+            </div>
+            <div className="location-info-container">
                 <LocationInfo location={location} />
             </div>
-            <h1 className="title">Rick and Morty</h1>
             <div className="residents-container">
                 <Pagination numberOfResidents={residents.length} rangeOfResidents={setRangeOfResidents} />
                 {list}

@@ -3,20 +3,21 @@ import React from "react"
 const LocationInfo = (props) => {
     return (
         <div className="location-info">
-            <p>{props.location.name}</p>
-            <p>{props.location.type}</p>
-            <p>{props.location.dimension}</p>
+            <p><i className="fas fa-map-marker-alt"></i> &nbsp; {props.location.name}</p>
+            <hr></hr>
+            <p><i className="fas fa-paragraph"></i> &nbsp; {props.location.type}</p>
+            <p><i className="fas fa-globe-europe"></i> &nbsp; {props.location.dimension}</p>
             {
                 props.location.residents
                     ?
-                    <p>{props.location.residents.length} residents</p>
+                    <p><i className="fas fa-user-friends"></i> &nbsp; {props.location.residents.length} residents</p>
                     :
                     <div></div>
             }
 
 
 
-        </div>
+        </div >
     )
 }
 

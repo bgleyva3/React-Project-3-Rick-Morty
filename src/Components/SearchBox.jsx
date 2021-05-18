@@ -15,14 +15,14 @@ const SearchBox = ({ handleSearch }) => {
                     e.preventDefault()
                     handleSearch(queryInput)
                 }}>
-                    <p>Search Location</p>
-                    <input placeholder="Enter location" onChange={(elem) => setQueryInput(elem.target.value)}></input>
-                    <button type="submit" value="Search">Search</button>
+                    <label htmlFor="location-input">Search Location</label>
+                    <input id="location-input" placeholder="Enter location" onChange={(elem) => setQueryInput(elem.target.value)}></input>
+                    <button id="search-button" type="submit" value="Search">Search</button>
                 </form>
             </div>
 
             <div className="open-search-button">
-                <button onClick={() => setShowForm("search-box in")}><i class="fas fa-search fa-lg"></i></button>
+                <button onClick={() => setShowForm("search-box in")}><i className="fas fa-search fa-lg"></i></button>
             </div>
 
         </div>

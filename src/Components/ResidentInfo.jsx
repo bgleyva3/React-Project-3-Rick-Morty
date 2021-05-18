@@ -1,14 +1,31 @@
 import React from "react"
+import { useEffect } from "react"
 
 const ResidentInfo = (props) => {
+
+    useEffect(() => {
+        console.log(props.id)
+    }, [props])
+
     return (
         <div className="resident-card" key={props.key}>
+
             <img src={props.image} />
-            <p>{props.name}</p>
+            <p><i className="fas fa-user-circle"></i> &nbsp; {props.name}</p>
             <hr></hr>
-            <p>{props.status} - {props.species}</p>
-            <p>{props.location}</p>
-            <p>{props.episodes} episodes</p>
+            {
+                props.status === "Alive" ?
+                    <p><i className="fas fa-circle green"></i> &nbsp; {props.status}</p>
+                    :
+                    props.status === "Dead" ?
+                        <p><i className="fas fa-circle red"></i> &nbsp; {props.status}</p>
+                        :
+                        <p><i className="fas fa-circle yellow"></i> &nbsp; {props.status}</p>
+            }
+
+            <p><i className="fas fa-otter"></i> &nbsp; {props.species}</p>
+            <p><i className="fas fa-globe-europe"></i> &nbsp; {props.location}</p>
+            <p><i className="fab fa-youtube"></i> &nbsp; {props.episodes} episodes</p>
         </div>
     )
 }
