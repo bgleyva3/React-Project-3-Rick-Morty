@@ -17,6 +17,7 @@ const SearchBox = ({ handleSearch }) => {
                 }}>
                     <label htmlFor="location-input">Search Location</label>
                     <input id="location-input" placeholder="Enter location" onChange={(elem) => setQueryInput(elem.target.value)}></input>
+                    <p>e.g., Earth, Nuptia, Squanch, ...</p>
                     <button id="search-button" type="submit" value="Search">Search</button>
                 </form>
             </div>

@@ -5,8 +5,8 @@ const LocationInfo = (props) => {
         <div className="location-info">
             <p><i className="fas fa-map-marker-alt"></i> &nbsp; {props.location.name}</p>
             <hr></hr>
-            <p><i className="fas fa-paragraph"></i> &nbsp; {props.location.type}</p>
-            <p><i className="fas fa-globe-europe"></i> &nbsp; {props.location.dimension}</p>
+            <p><i className="fas fa-globe-europe"></i> &nbsp; {props.location.type}</p>
+            <p><i className="fas fa-map-marked-alt"></i> &nbsp; {props.location.dimension}</p>
             {
                 props.location.residents
                     ?

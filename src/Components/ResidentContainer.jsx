@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import ResidentInfo from "./ResidentInfo.jsx"
+import Loader from './Loader'
 
-const ResidentContainer = ({ url, key }) => {
+const ResidentContainer = ({ setLoading, url, key }) => {
 
     const [image, setImage] = useState("")
     const [name, setName] = useState("")
@@ -13,6 +14,7 @@ const ResidentContainer = ({ url, key }) => {
 
     useEffect(() => {
         if (url) {
+            setLoading(true)
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
@@ -23,11 +25,12 @@ const ResidentContainer = ({ url, key }) => {
                     setLocation(data.location.name)
                     setEpisodes(data.episode.length)
                     setId(data.id)
+                    setLoading(false)
                 })
         }
     }, [url])
 
-    return (
+    return (  
         <ResidentInfo id={id} image={image} name={name} status={status} species={species} location={location} episodes={episodes} />
     )
 }

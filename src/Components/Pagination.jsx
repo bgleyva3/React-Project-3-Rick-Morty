@@ -6,7 +6,7 @@ const Pagination = ({ numberOfResidents, rangeOfResidents }) => {
 
     useEffect(() => {
         if (numberOfResidents) {
-            const numberOfPages = Math.ceil(numberOfResidents / 10)
+            const numberOfPages = Math.ceil(numberOfResidents / 8)
             const arrayOfPages = []
             for (let i = 1; i <= numberOfPages; i++) {
                 arrayOfPages.push(i)
@@ -17,8 +17,8 @@ const Pagination = ({ numberOfResidents, rangeOfResidents }) => {
 
     const rangeOfIndex = (e) => {
         const number = parseInt(e.target.textContent)
-        const indexMin = (number - 1) * 10
-        const indexMax = (number * 10) - 1
+        const indexMin = (number - 1) * 8
+        const indexMax = (number * 8) - 1
         const indexArray = [indexMin, indexMax]
         rangeOfResidents(indexArray)
     }

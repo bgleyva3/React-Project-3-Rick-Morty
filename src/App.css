@@ -16,9 +16,6 @@
   height:0;
 }
 
-.search-box{
-  
-}
 
 
 .search-box form{
@@ -79,10 +76,9 @@
 
 .location-info{
   background-color: #06152e;
-  width: 16rem;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  min-width: 16rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   border-radius: 6px; 
-  padding: 0;
   z-index: 10;
   position: absolute;
   right: 1rem;
@@ -110,15 +106,27 @@ ul {
   padding:0;
 }
 
+.initial-text{
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 900;
+  max-width: 40rem;
+  margin: 0 3rem;
+}
 
 .residents-container{
   background-color: #040B1A;
+  padding: 0 4rem 2rem 4rem;
+  min-height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title{
   font-size: 3.5rem;
   font-weight: 800;
-  color: #436cc4;
+  color: #040B1A;
   padding: 0;
   margin:auto;
   display: flex;
@@ -127,14 +135,44 @@ ul {
   height: 13rem;
 }
 
+.loading-container{
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.card-location-title{
+  font-weight: 700;
+  margin-top: 0.5rem;
+ /*  max-width: 12rem;
+  text-align: center;
+  margin: 0; */
+}
+
+.loader-style{
+  margin-top: 50vh;
+}
+
 .resident-card{
   background-color: #2B2D39;
   display: inline-block;
   margin: 1rem;
+  border-radius: 6px;
 }
 
-.resident-card :nth-child(2){
-  font-weight: 700;
+.resident-card img{
+  border-radius: 6px 6px 0 0;
+  flex-grow: 1;
+}
+
+.text-container{
+  flex-grow: 1 ;
 }
 
 .button-page{
@@ -180,7 +218,19 @@ button:hover{
   color:rgb(197, 187, 41);
 }
 
+
+@media (max-width: 1200px){
+  .title{
+    font-size: 2.5rem;
+  }
+}
+
+
 @media (max-width: 900px){
+
+  .residents-container{
+    padding: 0;
+  }
 
   .search-box-container{
     display: block;

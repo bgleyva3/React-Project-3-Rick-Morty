@@ -6,21 +6,24 @@ const ResidentInfo = (props) => {
         <div className="resident-card" key={props.key}>
 
             <img src={props.image} />
-            <p><i className="fas fa-user-circle"></i> &nbsp; {props.name}</p>
-            <hr></hr>
-            {
-                props.status === "Alive" ?
-                    <p><i className="fas fa-circle green"></i> &nbsp; {props.status}</p>
-                    :
-                    props.status === "Dead" ?
-                        <p><i className="fas fa-circle red"></i> &nbsp; {props.status}</p>
+            {/* <div className="text-container"> */}
+                <p className="card-location-title"><i className="fas fa-user-circle"></i> &nbsp; {props.name}</p>
+                <hr></hr>
+                {
+                    props.status === "Alive" ?
+                        <p><i className="fas fa-circle green"></i> &nbsp; {props.status}</p>
                         :
-                        <p><i className="fas fa-circle yellow"></i> &nbsp; {props.status}</p>
-            }
+                        props.status === "Dead" ?
+                            <p><i className="fas fa-circle red"></i> &nbsp; {props.status}</p>
+                            :
+                            <p><i className="fas fa-circle yellow"></i> &nbsp; {props.status}</p>
+                }
 
-            <p><i className="fas fa-otter"></i> &nbsp; {props.species}</p>
-            <p><i className="fas fa-globe-europe"></i> &nbsp; {props.location}</p>
-            <p><i className="fab fa-youtube"></i> &nbsp; {props.episodes} episodes</p>
+                <p><i className="fas fa-street-view"></i> &nbsp; {props.species}</p>
+                <p><i className="fas fa-globe-europe"></i> &nbsp; {props.location}</p>
+                <p><i className="fab fa-youtube"></i> &nbsp; {props.episodes} episodes</p>
+                
+            {/* </div> */}
         </div>
     )
 }
