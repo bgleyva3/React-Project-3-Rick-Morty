@@ -27,7 +27,7 @@ const Pagination = ({ numberOfResidents, rangeOfResidents }) => {
         <div className="button-page">
             {
                 pages.map((page) => {
-                    return (<button onClick={(e) => rangeOfIndex(e)}>{page}</button>)
+                    return (<button className="button-pagination" onClick={(e) => rangeOfIndex(e)}>{page}</button>)
                 })
             }
         </div>

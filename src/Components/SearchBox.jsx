@@ -1,15 +1,16 @@
 import { useState } from "react"
+import arrow from "../arrow.png"
 
 const SearchBox = ({ handleSearch }) => {
 
     const [queryInput, setQueryInput] = useState("")
     const [showForm, setShowForm] = useState("search-box out-noAnim")
+    const [showArrow, setShowArrow] = useState(true)
 
     return (
         <div>
-
             <div className={showForm}>
-                <button onClick={() => setShowForm("search-box out")}>X</button>
+                <button className="close-form" onClick={() => setShowForm("search-box out")}>X</button>
 
                 <form onSubmit={(e) => {
                     e.preventDefault()
@@ -23,7 +24,8 @@ const SearchBox = ({ handleSearch }) => {
             </div>
 
             <div className="open-search-button">
-                <button onClick={() => setShowForm("search-box in")}><i className="fas fa-search fa-lg"></i></button>
+                <button onClick={() => {setShowForm("search-box in"); setShowArrow(false)}}><i className="fas fa-search fa-lg"></i></button>
+                {showArrow && <img className="arrow" src={arrow} />}
             </div>
 
         </div>

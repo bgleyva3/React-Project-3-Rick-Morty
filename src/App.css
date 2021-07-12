@@ -16,7 +16,21 @@
   height:0;
 }
 
+.close-form{
+  border: none;
+  border-radius: 2px;
+  width: 1.7rem;
+  height: 1.7rem;
+  font-weight: 500;
+}
 
+.button-pagination{
+  border: none;
+  border-radius: 2px;
+  width: 1.7rem;
+  height: 2rem;
+  font-weight: 500;
+}
 
 .search-box form{
   box-sizing: border-box;
@@ -26,7 +40,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  width: 18rem;
+  width: 20rem;
   background-color: #06152e;
   z-index: 8;
   top: -13rem;
@@ -98,7 +112,31 @@
   color: white;
   background-color: #06152e;
   border-radius: 6px;
-  
+}
+
+.arrow{
+  transform: scale(0.2) rotate(-180deg);
+  position: absolute;
+  top: -17rem;
+  left: -2rem;
+  opacity: 0.3;
+  animation-name: arrow-pulse;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrow-pulse {
+	0% {
+		left: -2rem;
+	}
+
+	50% {
+		left: -2.5rem;
+	}
+
+	100% {
+		left: -2rem
+	}
 }
 
 ul {
