@@ -78,7 +78,7 @@ function App() {
                 <SearchBox handleSearch={setQueryTerm} />
             </div>
             <div className="location-info-container">
-                {showLocationInfo && <LocationInfo location={location} />}
+                {showLocationInfo && <LocationInfo residents={residents} location={location} />}
             </div>
            {/*  <div className="ricknmorty-container">
                 <img src={ricknmorty} />
