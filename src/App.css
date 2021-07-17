@@ -173,6 +173,8 @@ ul {
   height: 13rem;
 }
 
+
+
 .loading-container{
   position: absolute;
   display: flex;
@@ -335,4 +337,5 @@ button:hover{
     to {left: 0rem;}
   }
   
+
 }

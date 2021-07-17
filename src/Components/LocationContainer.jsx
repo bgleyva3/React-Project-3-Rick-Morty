@@ -4,23 +4,24 @@ import ResidentContainer from "./ResidentContainer"
 import LocationInfo from "./LocationInfo"
 import Pagination from "./Pagination"
 import Loader from './Loader'
+import ricknmorty from "../ricknmorty.png"
 
 function App() {
 
     const [queryTerm, setQueryTerm] = useState("");
     const [residents, setResidents] = useState([])
     const [location, setLocation] = useState("")
-    const [firstData, setFirstData] = useState(false)
+    const [firstData, setFirstData] = useState(true)
     const [showLocationInfo, setShowLocationInfo] = useState(false)
     const [rangeOfResidents, setRangeOfResidents] = useState([0, 7]) //SETTLE FIRST range of residents
     const [sliceOfResidents, setSliceOfResidents] = useState([])
     const [loading, setLoading] = useState(false);
 
-    /* //First random location
+    //First random location
     useEffect(() => {
         const randomId = Math.round(Math.random() * 108)
-        if (residents.length === 0 && firstData) {
-            console.log("EEEEEEEEEEOOOO")
+        if (firstData && residents.length === 0) {
+            setShowLocationInfo(true)
             setLoading(true)
             fetch(`https://rickandmortyapi.com/api/location/${randomId}`)
                 .then(response => response.json())
@@ -34,7 +35,7 @@ function App() {
                     setLoading(false)
                     )
         }
-    }, [residents]) */
+    }, [firstData, residents])
 
 
     // This handles all location by user querys
@@ -79,6 +80,9 @@ function App() {
             <div className="location-info-container">
                 {showLocationInfo && <LocationInfo location={location} />}
             </div>
+           {/*  <div className="ricknmorty-container">
+                <img src={ricknmorty} />
+            </div> */}
             <div className="residents-container">
                 { !showLocationInfo &&
                      <h2 className="initial-text">SEARCH A RICK AND MORTY LOCATION TO SEE ALL OF ITS RESIDENTS </h2>}
